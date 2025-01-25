@@ -13,6 +13,8 @@ class Catagory extends Model
         'catname',
         'status	',
     ];
+  
 
+    
     use HasFactory;
 }

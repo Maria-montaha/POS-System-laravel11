@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Catagory</a>
+            <a class="nav-link active" aria-current="page" href=" {{url('/catagory')}} ">Catagory</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Brand</a>
@@ -63,6 +63,9 @@
       </div>
     </div>
   </nav>
+  <div>
+    @yield('content')
+  </div>
   @include('liberies.scripts')
 </body>
 

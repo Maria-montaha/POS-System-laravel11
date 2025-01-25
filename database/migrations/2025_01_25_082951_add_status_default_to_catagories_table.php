@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catagories', function (Blueprint $table) {
-            $table->id();
-            $table->string('catname');
-            $table->boolean('status')->default(0); 
-            $table->timestamps();
+        Schema::table('catagories', function (Blueprint $table) {
+            //
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('catagories');
+        Schema::table('catagories', function (Blueprint $table) {
+            //
+        });
     }
 };
