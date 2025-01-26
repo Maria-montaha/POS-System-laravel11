@@ -24,7 +24,7 @@
             <a class="nav-link active" aria-current="page" href=" {{url('/catagory')}} ">Catagory</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Brand</a>
+            <a class="nav-link" href=" {{url('/brand')}} ">Brand</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Product</a>

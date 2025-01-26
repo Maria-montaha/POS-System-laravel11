@@ -64,16 +64,23 @@ class CatagoryController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $response['catagory']=$this->catagory->find($id);
+        return view('catagory.edit')->with($response);
     }
 
     public function update(Request $request, string $id)
     {
-        //
+$catagory=$this->catagory->find($id);
+// dd($catagory->toArray(),$request->toArray());
+$catagory->update(array_merge($catagory->toArray(),$request->toArray()));
+return redirect()->route('catagory.index')->with('success', 'Category updated successfully!');
+
     }
 
     public function destroy(string $id)
     {
-        //
+       $catagory=$this->catagory->find($id);
+       $catagory->delete();
+       return redirect()->route('catagory.index')->with('success', 'Category updated successfully!');
     }
 }

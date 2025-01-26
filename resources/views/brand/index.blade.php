@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="container">
-    <h3 align="center" class="mt-5">Catagory</h3>
+    <h3 align="center" class="mt-5">Brand</h3>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -12,12 +12,12 @@
         </div>
         <div class="col-md-8">
             <div class="form-area">
-                <form method="POST" action="{{ route('catagory.store') }}">
+                <form method="POST" action="{{ route('brand.store') }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Catagory Name</label>
-                            <input type="text" class="form-control" name="catname">
+                            <label>Brand Name</label>
+                            <input type="text" class="form-control" name="brandname">
                         </div>
                         <div class="col-md-6">
                             <label>status</label>
@@ -47,20 +47,20 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Catagory Name</th>
+                        <th scope="col">Brand Name</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ( $catagories as $key => $catagory )
+                    @foreach ( $brands as $key => $brand )
                     <tr>
                         <td scope="col">{{ ++$key }}</td>
-                        <td scope="col">{{ $catagory->catname }}</td>
+                        <td scope="col">{{ $brand->brandname }}</td>
                         <td scope="col">
-                            <!-- {{$catagory->status}} -->
-                            @if($catagory->status==1)
+                        
+                            @if($brand->status==1)
                             true
                             @else
                             false
@@ -68,13 +68,13 @@
 
                         </td>
                         <td scope="col">
-                            <a href="{{  route('catagory.edit', $catagory->id) }}" onsubmit="return confirmUpdate()">
+                            <a href="{{  route('brand.edit', $brand->id) }}" onsubmit="return confirmUpdate()">
                                 <button class="btn btn-primary btn-sm">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
                             </a>
 
-                            <form action="{{ route('catagory.destroy', $catagory->id) }}" method="POST" style="display:inline" onsubmit="return confirmDelete()">
+                            <form action="{{ route('brand.destroy', $brand->id) }}" method="POST" style="display:inline" onsubmit="return confirmDelete()">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
@@ -118,7 +118,7 @@
     function confirmUpdate() {
         return confirm("Are you sure you want to update this category?");
     }
-    document.querySelector('.update-category-form').addEventListener('submit', function(e) {
+    document.querySelector('.update-brand-form').addEventListener('submit', function(e) {
         if (!confirm("Are you sure you want to update this category?")) {
             e.preventDefault(); 
         }
