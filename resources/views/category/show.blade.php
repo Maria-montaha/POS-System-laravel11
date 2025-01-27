@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Catagory;
+use App\Models\category;
 
-class CatagoryController extends Controller
+class categoryController extends Controller
 {
-    protected $catagory;
+    protected $category;
     // public function _construct()
     // {
-    //     $this->catagory = new catagory();
+    //     $this->category = new category();
     // }
 
     public function __construct()
 {
-    $this->catagory = new Catagory();
+    $this->category = new category();
 }
     public function index()
     { {
-            $response['catagories'] = $this->catagory->all();
-            return view('catagory.index')->with($response);
+            $response['categories'] = $this->category->all();
+            return view('category.index')->with($response);
         }
     }
     /**
@@ -36,7 +36,7 @@ class CatagoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->catagory->create($request->all());
+        $this->category->create($request->all());
         return redirect()->back();
     }
 

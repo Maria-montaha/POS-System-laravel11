@@ -31,7 +31,7 @@ return new class extends Migration
 //             $table->unsignedInteger('brand_id');
 //             $table->double('price', 8, 2);
             
-//             $table->foreign('cat_id')->references('id')->on('catagories')->onDelete('cascade');
+//             $table->foreign('cat_id')->references('id')->on('categories')->onDelete('cascade');
 //             $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
 //             $table->timestamps();
 //         });

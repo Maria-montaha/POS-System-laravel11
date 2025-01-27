@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\BrandController;
-use App\Http\Controllers\CatagoryController;
+use App\Http\Controllers\categoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,8 +13,9 @@ Route::get('/', function () {
     return view('layout');
 });
 
-Route::resource('/catagory',CatagoryController::class);
+Route::resource('/category',categoryController::class);
 Route::resource('/brand',BrandController::class);
+Route::resource('/product',ProductController::class);
 
 
 

@@ -1,26 +1,26 @@
 @extends('layout')
 @section('content')
 <div class="container">
-    <h3 align="center" class="mt-5">Catagory Edit</h3>
+    <h3 align="center" class="mt-5">category Edit</h3>
     <div class="row">
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
             <div class="form-area">
-                <form method="POST" action="{{ route('catagory.update',$catagory->id) }}">
+                <form method="POST" action="{{ route('category.update',$category->id) }}">
                 {!! csrf_field() !!}
                 @method("PATCH")
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Catagory Name</label>
-                            <input type="text" class="form-control" name="catname" value="{{$catagory->catname}}">
+                            <label>category Name</label>
+                            <input type="text" class="form-control" name="catname" value="{{$category->catname}}">
                         </div>
                         <div class="col-md-6">
                             <label>status</label>
                             <select name="status" id="status" class="form-control">
                                 <option selected>select menu</option>
-                                <option value="1"{{$catagory->status==1 ? 'selected' : ''}}>True</option>
-                                <option value="0"{{$catagory->status== 0 ? 'selected' : ''}}>false</option>
+                                <option value="1"{{$category->status==1 ? 'selected' : ''}}>True</option>
+                                <option value="0"{{$category->status== 0 ? 'selected' : ''}}>false</option>
 
 
                             </select>

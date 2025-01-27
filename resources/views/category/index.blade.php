@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="container">
-    <h3 align="center" class="mt-5">Catagory</h3>
+    <h3 align="center" class="mt-5">category</h3>
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -12,11 +12,11 @@
         </div>
         <div class="col-md-8">
             <div class="form-area">
-                <form method="POST" action="{{ route('catagory.store') }}">
+                <form method="POST" action="{{ route('category.store') }}">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Catagory Name</label>
+                            <label>category Name</label>
                             <input type="text" class="form-control" name="catname">
                         </div>
                         <div class="col-md-6">
@@ -47,20 +47,20 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Catagory Name</th>
+                        <th scope="col">category Name</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    @foreach ( $catagories as $key => $catagory )
+                    @foreach ( $categories as $key => $category )
                     <tr>
                         <td scope="col">{{ ++$key }}</td>
-                        <td scope="col">{{ $catagory->catname }}</td>
+                        <td scope="col">{{ $category->catname }}</td>
                         <td scope="col">
-                            <!-- {{$catagory->status}} -->
-                            @if($catagory->status==1)
+                            <!-- {{$category->status}} -->
+                            @if($category->status==1)
                             true
                             @else
                             false
@@ -68,13 +68,13 @@
 
                         </td>
                         <td scope="col">
-                            <a href="{{  route('catagory.edit', $catagory->id) }}" onsubmit="return confirmUpdate()">
+                            <a href="{{  route('category.edit', $category->id) }}" onsubmit="return confirmUpdate()">
                                 <button class="btn btn-primary btn-sm">
                                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                                 </button>
                             </a>
 
-                            <form action="{{ route('catagory.destroy', $catagory->id) }}" method="POST" style="display:inline" onsubmit="return confirmDelete()">
+                            <form action="{{ route('category.destroy', $category->id) }}" method="POST" style="display:inline" onsubmit="return confirmDelete()">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

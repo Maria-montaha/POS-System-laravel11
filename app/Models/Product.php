@@ -15,9 +15,9 @@ class Product extends Model
        'brand_id',
        'price',
    ];
-public function catagory()
+public function category()
 {
-    return $this->belongsTo(Catagory::class,'cat_id');
+    return $this->belongsTo(Category::class,'cat_id');
 }
 public function brand()
 {

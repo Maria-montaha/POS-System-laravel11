@@ -21,13 +21,13 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href=" {{url('/catagory')}} ">Catagory</a>
+            <a class="nav-link active" aria-current="page" href=" {{url('/category')}} ">category</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=" {{url('/brand')}} ">Brand</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Product</a>
+            <a class="nav-link" href=" {{url('/product')}} ">Product</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sales</a>

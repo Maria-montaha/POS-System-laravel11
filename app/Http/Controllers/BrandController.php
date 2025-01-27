@@ -9,7 +9,7 @@ class BrandController extends Controller
 {
     protected $brand;
 
-    // Inject the Catagory model via the constructor
+    // Inject the category model via the constructor
     public function __construct(Brand $brand)
     {
         $this->brand = $brand;
@@ -52,11 +52,11 @@ class BrandController extends Controller
         $brand->status = $request->status;
         $brand->save();
 
-        // $this->catagory->create([
+        // $this->category->create([
         //     'catname' => $request->catname,
         //     'status' => (int)$request->status,  // 1 for Active, 0 for Inactive
         // ]);
-        // dd($this->catagory);
+        // dd($this->category);
 
         return redirect()->route('brand.index')->with('success', 'brand created successfully!');
     }
@@ -81,7 +81,7 @@ class BrandController extends Controller
     public function update(Request $request, string $id)
     {
 $brand=$this->brand->find($id);
-// dd($catagory->toArray(),$request->toArray());
+// dd($category->toArray(),$request->toArray());
 $brand->update(array_merge($brand->toArray(),$request->toArray()));
 return redirect()->route('brand.index')->with('success', 'brand updated successfully!');
 
